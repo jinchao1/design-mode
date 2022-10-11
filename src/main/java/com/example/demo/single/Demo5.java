@@ -9,6 +9,7 @@ package com.example.demo.single;
  */
 public class Demo5 {
 
+
     private static volatile Demo5 INSTANCE; //volatile  防止指令重排序
 
     private Demo5(){};
