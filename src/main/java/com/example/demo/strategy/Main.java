@@ -14,8 +14,18 @@ public class Main {
         Sorter.sort(arr);
         System.out.println(Arrays.toString(arr));*/
 
-        Cat[] a = {new Cat(3,3),new Cat(5,5),new Cat(1,1)};
+        /*Cat[] a = {new Cat(3,3),new Cat(5,5),new Cat(1,1)};
         CatSorter.sort(a);
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a));*/
+
+        Dog[] d = {new Dog(7),new Dog(2),new Dog(5)};
+        ObjectSorter<Dog> DogSorter = new ObjectSorter<>();
+        DogSorter.sort(d,new DogComparator());
+        System.out.println("狗狗"+Arrays.toString(d));
+
+        Cat[] c = {new Cat(3,3),new Cat(5,5),new Cat(1,1)};
+        ObjectSorter<Cat> CatSorter = new ObjectSorter<>();
+        CatSorter.sort(c,new CatWeightComparator());
+        System.out.println("猫猫"+Arrays.toString(c));
     }
 }
