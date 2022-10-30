@@ -25,7 +25,13 @@ public class Main {
 
         Cat[] c = {new Cat(3,3),new Cat(5,5),new Cat(1,1)};
         ObjectSorter<Cat> CatSorter = new ObjectSorter<>();
-        CatSorter.sort(c,new CatHeightComparator());
+//        CatSorter.sort(c,new CatHeightComparator());
+        //lamda表达式   函数式接口
+        CatSorter.sort(c,(o1,o2)->{
+            if(o1.height < o2.height) return 1;
+            else if(o1.height > o2.height) return -1;
+            else return 0;
+        });
         System.out.println("猫猫"+Arrays.toString(c));
     }
 }
