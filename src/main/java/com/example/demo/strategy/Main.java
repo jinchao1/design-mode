@@ -25,7 +25,7 @@ public class Main {
 
         Cat[] c = {new Cat(3,3),new Cat(5,5),new Cat(1,1)};
         ObjectSorter<Cat> CatSorter = new ObjectSorter<>();
-        CatSorter.sort(c,new CatWeightComparator());
+        CatSorter.sort(c,new CatHeightComparator());
         System.out.println("猫猫"+Arrays.toString(c));
     }
 }
