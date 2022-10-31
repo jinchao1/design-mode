@@ -6,7 +6,7 @@ package com.example.demo.abstractfactory;
  * @Description: com.example.demo.factorymethod
  * @version: 1.0
  */
-public class Car{
+public class Car extends Vehicle{
     public void  go(){
         System.out.println("Car go wuwuwu.....");
     }

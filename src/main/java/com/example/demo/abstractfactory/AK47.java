@@ -6,7 +6,7 @@ package com.example.demo.abstractfactory;
  * @Description: com.example.demo.abstractfactory
  * @version: 1.0
  */
-public class AK47 {
+public class AK47 extends Weapon{
     public void shoot(){
         System.out.println("tutututu......");
     }
