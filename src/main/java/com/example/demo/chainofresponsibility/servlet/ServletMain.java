@@ -25,7 +25,7 @@ public class ServletMain {
 //            filter.doFilter(msg);
 //        }
 
-        FilterChain filterChain = new FilterChain();
+        /*FilterChain filterChain = new FilterChain();
         filterChain.addFilter(new HTMLFilter())
                 .addFilter(new SensitiveFilter());
 
@@ -34,8 +34,17 @@ public class ServletMain {
         filterChain2.addFilter(new FaceFilter())
                 .addFilter(new URLFilter());
         filterChain.addFilter(filterChain2);
+        filterChain.doFilter(msg);*/
 
-        filterChain.doFilter(msg);
+        Request request = new Request();
+        request.str = "request";
+
+        Response response = new Response();
+        response.str = "response";
+
+        FilterChain filterChain = new FilterChain();
+        filterChain.doFilter(request,response);
+
         System.out.println(msg.getMsg());
 
     }
