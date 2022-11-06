@@ -3,7 +3,7 @@ package com.example.demo.flyweight;
 /**
  * @Auther: jinchao
  * @Date: 2022/11/6 - 23:40
- * @Description:  用了享元模式
+ * @Description:  设计模式之享元模式
  * @version: 1.0
  */
 public class TestString {
