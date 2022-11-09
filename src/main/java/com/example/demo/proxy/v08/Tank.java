@@ -1,5 +1,8 @@
-package com.example.demo.proxy.v07;
+package com.example.demo.proxy.v08;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Random;
 
 /**
@@ -29,48 +32,70 @@ public class Tank implements Movabel {
     }
 
     public static void main(String[] args) {
-        new TankTimeProxy(
-                new TankLogProxy(
-                        new Tank()
-                )
-        ).move();
+        Tank tank = new Tank();
+
+        //reflection  通过二进制字节码分析类的属性和方法
+
+        Movabel m = (Movabel)Proxy.newProxyInstance(Tank.class.getClassLoader(),
+                new Class[]{Movabel.class}, //tank.class.getInterfaces()
+                new LogHandler(tank));
+
+        m.move();
     }
 }
 
-class TankTimeProxy implements Movabel {
+class LogHandler implements InvocationHandler{
 
-    Movabel m;
+    Tank tank;
 
-    public TankTimeProxy(Movabel m) {
-        this.m = m;
+    public LogHandler(Tank tank) {
+        this.tank = tank;
     }
 
     @Override
-    public void move() {
-        long start = System.currentTimeMillis();
-        m.move();
-        long end = System.currentTimeMillis();
-        System.out.println("坦克移动时间为："+(end - start));
-    }
-}
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("method " + method.getName() + " start..");
+        Object o = method.invoke(tank, args);
+        System.out.println("method " + method.getName() + " end!");
+        return o;
 
-class TankLogProxy implements Movabel {
-
-    Movabel m;
-
-    public TankLogProxy(Movabel m) {
-        this.m = m;
-    }
-
-    @Override
-    public void move() {
-        System.out.println("start moving...");
-        m.move();
-        System.out.println("stopped!");
     }
 }
 
 interface Movabel{
     void move();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
