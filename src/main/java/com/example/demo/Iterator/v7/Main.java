@@ -11,7 +11,7 @@ package com.example.demo.Iterator.v7;
  * v7:实现泛型版本
  */
 
-public class Main {
+public class  Main {
     public static void main(String[] args) {
         Collection_<String> list = new ArrayList_<>();
         for(int i=0; i<15; i++) {

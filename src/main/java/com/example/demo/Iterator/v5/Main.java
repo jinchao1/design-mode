@@ -1,5 +1,6 @@
 package com.example.demo.Iterator.v5;
 
+
 /**
  * v1:构建一个容器，可以添加对象
  * v2:用链表来实现一个容器
@@ -23,6 +24,19 @@ public class Main {
             Object o = it.next();
             System.out.println(o);
         }
+
+//        Collection_ list1 = new LinkedList_();
+//        for (int j = 0; j < 15; j++) {
+//            list1.add(new String("s" + j));
+//        }
+//        System.out.println(list1.size());
+//
+//        Iterator_ it1 = list1.iterator();
+//        while (it1.hasNext()){
+//            Object o1 = it1.next();
+//            System.out.println(o1);
+//        }
+
     }
 }
 

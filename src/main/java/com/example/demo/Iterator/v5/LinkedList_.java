@@ -38,6 +38,22 @@ class LinkedList_ implements Collection_ {
 
     @Override
     public Iterator_ iterator() {
-        return null;
+        return new LinkedListIterator();
     }
+
+
+    private class LinkedListIterator implements Iterator_{
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public Object next() {
+            return null;
+        }
+    }
+
+
 }
