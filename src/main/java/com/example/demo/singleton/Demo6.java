@@ -1,4 +1,4 @@
-package com.example.demo.single;
+package com.example.demo.singleton;
 
 /**
  *  静态内部类方式

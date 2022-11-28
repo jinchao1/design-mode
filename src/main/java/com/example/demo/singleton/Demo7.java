@@ -1,4 +1,4 @@
-package com.example.demo.single;
+package com.example.demo.singleton;
 
 /**
  *   todo: 枚举单例
